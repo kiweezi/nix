@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "main",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+
+	"features": {
+		"ghcr.io/guiyomh/features/just:0": {},
+		"ghcr.io/devcontainers/features/powershell:2.0.1": {}
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				// Helps with some annoying warnings in vscode-icons.
+				"workbench.iconTheme": "vscode-icons",
+				"vsicons.dontShowNewVersionMessage": true
+			},
+			"extensions": [
+				"nefrob.vscode-just-syntax",
+				"vscode-icons-team.vscode-icons",
+				"bbenoist.nix"
+			]
+		}
+	}
+
+	// // Install fonts before the first use of the container.
+	// "onCreateCommand": {}
+}
