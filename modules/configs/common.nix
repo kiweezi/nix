@@ -30,11 +30,12 @@
             };
             git = {
                 enable = true;
-                config = {
-                    global = {
-                        userName = "kiweezi";
-                        userEmail = "46600706+kiweezi@users.noreply.github.com";
-                    };
+                userName = "kiweezi";
+                userEmail = "46600706+kiweezi@users.noreply.github.com";
+                extraConfig = {
+                    init.defaultBranch = "main";
+                    safe.directory = "/etc/nixos";
+                    safe.directory = "/home/yourusername/.dotfiles";
                 };
             };
         };
