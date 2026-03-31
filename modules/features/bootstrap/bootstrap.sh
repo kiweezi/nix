@@ -1,6 +1,7 @@
 #!/bin/bash
 
 Repository="https://github.com/kiweezi/nix"
+Ref="init"
 Host="vm"
 
 cd ~
@@ -10,7 +11,7 @@ mkdir -p nixos/flake
 cd nixos/flake
 git clone $Repository .
 
-# Switch to the latest commit on the main branch, then nix switch.
-git checkout main
-git pull origin main
+# Switch to the specified ref, then nix switch.
+git checkout $Ref
+git pull origin $Ref
 nixos-rebuild switch --flake .#${Host}
