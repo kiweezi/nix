@@ -15,3 +15,6 @@ git clone $Repository .
 git checkout $Ref
 git pull origin $Ref
 nixos-rebuild switch --flake .#${Host}
+
+# Then I need to run this command to init the bootstrap on a nixos system:
+# nix-shell -p git --command "nix run --experimental-features 'nix-command flakes' github:kiweezi/nix?ref=init"
