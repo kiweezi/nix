@@ -24,18 +24,22 @@
             };
             fish = {
                 enable = true;
-                shellAliases = [
-                    dirsize = "du -sh"
-                ];
+                shellAliases = [];
             };
             git = {
                 enable = true;
                 userName = "kiweezi";
                 userEmail = "46600706+kiweezi@users.noreply.github.com";
-                extraConfig = {
-                    init.defaultBranch = "main";
-                    safe.directory = "/etc/nixos";
-                    safe.directory = "/home/yourusername/.dotfiles";
+                config = {
+                    init = {
+                        defaultBranch = "main";
+                    };
+                    safe = {
+                        directory = [
+                            "/etc/nixos"
+                            "/home/kiweezi/.dotfiles"
+                        ];
+                    };
                 };
             };
         };

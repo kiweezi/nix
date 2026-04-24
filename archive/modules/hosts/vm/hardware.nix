@@ -8,7 +8,7 @@
         boot.initrd.availableKernelModules = [ "ata_piix", "ohci_pci", "ehci_pci", "ahci", "sd_mod", "sr_mod" ];
 
         fileSystems."/" = {
-            device = "/dev/disk/by-uuid/c41f4c26-cfa8-4253-a815-904f16ea50f0"; # UUID may need changing.
+            device = "/dev/disk/by-uuid/c41f4c26-cfa8-4253-a815-904f16ea50f0";
             fsType = "ext4";
         };
 

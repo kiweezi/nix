@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-    flake.nixosModules.drivers.nvidiaTuring = { pkgs, lib, ... }: {
+    flake.nixosModules.drivers.nvidiaTuring = { pkgs, lib, config,... }: {
         # Enable OpenGL
         hardware.graphics = {
             enable = true;

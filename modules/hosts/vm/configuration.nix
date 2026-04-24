@@ -1,19 +1,24 @@
-# VirtualBox VM device configuration for NixOS.
+{ inputs, self, ... }: {
+  
+  # flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
+  #   modules = [
+  #     self.nixosModules.vmHardware
+  #   ];
+  # };
 
-{ self, inputs, ... }: {
-    flake.nixosModules.vmConfiguration = { pkgs, lib, ... }: {
-        imports = [
-            self.nixosModules.vmHardware
-            self.nixosModules.locales.europeAmsterdam
-            self.nixosModules.configs.common
-        ];
+  flake.nixosConfigurations.vmConfiguration = { pkgs, ... }: {
+    imports = [
+      self.nixosModules.vmHardware
+      self.nixosModules.locales.europeAmsterdam
+      # self.nixosModules.configs.common
+    ];
 
-        # Always enable flakes.
-        nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    # Always enable flakes.
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-        networking = {
-            hostName = "vm";
-            useDHCP = true;
-        };
+    networking = {
+      hostName = "vm";
+      useDHCP = true;
     };
+  };
 }

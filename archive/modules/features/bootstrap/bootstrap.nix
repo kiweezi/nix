@@ -39,5 +39,5 @@
          program = "${self.packages.${system}.bootstrap}/bin/bootstrap";
        };
      });
-   }
+   };
 }
